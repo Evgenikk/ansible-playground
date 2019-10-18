@@ -1,0 +1,10 @@
+- hosts: localhost
+  connection: local
+  tasks:
+  - name: use include
+    include_tasks: include_example.yml
+    loop:  "{{ query('sequence', 'start=0 count=4') }}"
+
+  # - name: use import
+  #   import_tasks: import_example.yml
+  #   loop: "{{ query('sequence', 'start=0 count=4 }}"

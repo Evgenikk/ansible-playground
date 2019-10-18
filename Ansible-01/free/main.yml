@@ -1,0 +1,18 @@
+- hosts: all  
+  strategy: free
+  tasks:
+  - name: loop with free strategy
+    debug: msg="item valuse is {{ item }} "
+    loop:  "{{ query('sequence', 'start=100 count=4') }}"
+  - name: task 1
+    debug: msg="1 task ({{inventory_hostname}})"
+  - name: task 2
+    debug: msg="2 task ({{inventory_hostname}})"
+  - name: task 3
+    debug: msg="3 task ({{inventory_hostname}})"
+  - name: task 4
+    debug: msg="4 task ({{inventory_hostname}})"
+  - name: task 5
+    debug: msg="5 task ({{inventory_hostname}})"
+  - name: task 6
+    debug: msg="6 task ({{inventory_hostname}})"

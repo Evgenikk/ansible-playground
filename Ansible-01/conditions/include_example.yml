@@ -1,0 +1,7 @@
+- name: (include) show include_flag
+  debug: var=include_flag
+  # when: include_flag == true
+
+- name: (include) show import_flag
+  debug: var=import_flag
+  # when: include_flag == true

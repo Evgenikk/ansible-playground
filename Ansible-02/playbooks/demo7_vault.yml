@@ -1,0 +1,9 @@
+- hosts: localhost
+  gather_facts: no 
+  vars_files:
+    - vars/secret.yml
+  tasks:
+    - name: show secret
+      debug:
+        var: secret_password
+

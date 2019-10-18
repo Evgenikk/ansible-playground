@@ -1,0 +1,6 @@
+- name: (include) auth
+  debug: msg="auth in user-{{ item}} cluster"
+
+- name: (include) generate creds
+  debug: msg="generate user-{{ item }} creds"
+

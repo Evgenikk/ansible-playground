@@ -1,0 +1,12 @@
+- hosts: localhost
+  gather_facts: no
+
+  tasks:
+  - name: task with "notify"
+    debug:
+      msg: "this task should run handler"
+    notify: handler1
+    changed_when: true
+
+  handlers:
+  - import_tasks: handlers/handlers.yml

@@ -1,0 +1,5 @@
+- name: (include) 1st task
+  debug: msg="item = {{ item }}"
+
+- name: (include) 2nd task
+  debug: msg="item = {{ item }}"

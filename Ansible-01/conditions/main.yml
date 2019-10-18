@@ -1,0 +1,13 @@
+- hosts: localhost
+  connection: local
+  vars:
+    import_flag: true
+    include_flag: true
+  tasks:
+    - name: use include
+      include_tasks: include_example.yml
+      when: include_flag == false
+
+    - name: use import
+      import_tasks: import_example.yml
+      when: import_flag == false

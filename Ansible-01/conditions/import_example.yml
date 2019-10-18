@@ -1,0 +1,7 @@
+- name: (import) print import_flag 
+  debug: var=import_flag
+  # when: include_flag == false
+
+- name: (import) show include_flag
+  debug: var=include_flag
+  # when: include_flag == false

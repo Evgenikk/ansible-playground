@@ -1,0 +1,21 @@
+- hosts: localhost
+  gather_facts: no
+
+  tasks:
+  - name: get handlers via include
+    debug:
+      msg: "try to use include"
+    changed_when: true
+    notify: include handlers
+
+  - meta: flush_handlers
+
+  - name: task with "notify"
+    debug:
+      msg: "this task should run handler"
+    notify: handler1
+    changed_when: true
+
+  handlers:
+    - name: include handlers
+      include_tasks: handlers/handlers.yml

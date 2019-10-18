@@ -1,0 +1,27 @@
+- hosts: localhost
+  gather_facts: no  
+  tasks:
+  - name: task with "notify"
+    debug:
+      msg: "this task should run handler"
+    notify: my handler1
+    changed_when: true
+
+  - meta: flush_handlers
+
+  - name: second  task
+    debug:
+      msg: "do something"
+    changed_when: true
+    notify: 
+      - my handler1
+      - my handler2
+  
+  handlers:
+  - name: my handler1
+    debug: 
+      msg: "its handler1 time!"
+
+  - name: my handler2
+    debug: 
+      msg: "its handler2 time!"

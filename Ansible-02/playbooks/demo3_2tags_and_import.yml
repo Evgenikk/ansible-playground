@@ -1,0 +1,6 @@
+- hosts: localhost
+  gather_facts: no  
+  tasks:
+  - name: import/include tasks
+    include_tasks: tasks/msg.yml
+    tags: main_playbook_tag

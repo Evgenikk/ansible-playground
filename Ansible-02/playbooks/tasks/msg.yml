@@ -1,0 +1,6 @@
+  - name: external task
+    debug:
+      msg: "this task was imported/included"
+    tags: 
+      - secondary_tag
+      - main_playbook_tag
